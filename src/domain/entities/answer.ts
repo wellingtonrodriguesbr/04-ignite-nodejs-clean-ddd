@@ -5,8 +5,8 @@ interface AnswerProps {
   content: string;
   authorId: UniqueEntityId;
   questionId: UniqueEntityId;
-  createAt: Date;
-  updateAt?: Date;
+  createdAt: Date;
+  updatedAt?: Date;
 }
 
 export class Answer extends Entity<AnswerProps> {
