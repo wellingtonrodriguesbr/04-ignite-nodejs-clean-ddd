@@ -6,7 +6,7 @@ import { makeQuestionComment } from "test/factories/make-question-comment";
 let inMemoryQuestionCommentsRepository: InMemoryQuestionCommentsRepository;
 let sut: DeleteQuestionCommentUseCase;
 
-describe("Delete Comment Question", () => {
+describe("Delete Question Comment", () => {
   beforeEach(() => {
     inMemoryQuestionCommentsRepository =
       new InMemoryQuestionCommentsRepository();
