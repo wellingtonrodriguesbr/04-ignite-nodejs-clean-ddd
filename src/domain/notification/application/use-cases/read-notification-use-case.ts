@@ -26,6 +26,7 @@ export class ReadNotificationUseCase {
     const notification = await this.notificationsRepository.findById(
       notificationId
     );
+
     if (!notification) {
       return left(new ResourceNotFoundError());
     }
@@ -36,7 +37,7 @@ export class ReadNotificationUseCase {
 
     notification.read();
 
-    await this.notificationsRepository.create(notification);
+    await this.notificationsRepository.save(notification);
     return right({ notification });
   }
 }

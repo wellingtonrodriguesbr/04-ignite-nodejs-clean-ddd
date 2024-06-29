@@ -1,7 +1,6 @@
 import { InMemoryNotificationsRepository } from "test/repositories/in-memory-notifications-repository";
 import { ReadNotificationUseCase } from "./read-notification-use-case";
 import { makeNotification } from "test/factories/make-notification";
-import { create } from "domain";
 import { UniqueEntityId } from "@/core/entities/unique-entity-id";
 import { NotAllowedError } from "@/core/errors/errors/not-allowed-error";
 
@@ -17,7 +16,7 @@ describe("Read Notification", () => {
   it("should be able to read a notification", async () => {
     const notification = makeNotification();
 
-    inMemoryNotificationsRepository.create(notification);
+    await inMemoryNotificationsRepository.create(notification);
 
     const result = await sut.execute({
       recipientId: notification.recipientId.toString(),
